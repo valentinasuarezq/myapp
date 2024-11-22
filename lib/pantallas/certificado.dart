@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './cuidador.dart';
+import './cuidadores.dart';
 
 class certificado extends StatelessWidget {
   @override
@@ -17,7 +19,7 @@ class certificado extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(0, 50, 0, 0),
+                margin: EdgeInsets.fromLTRB(0, 60, 0, 0),
                 width: 160,
                 height: 70,
                 child: Image(
@@ -40,7 +42,7 @@ class certificado extends StatelessWidget {
                   ),
                   ),
               Padding(
-              padding: EdgeInsets.fromLTRB(0, 45, 0, 0),
+              padding: EdgeInsets.fromLTRB(0,59, 0, 0),
               child: MaterialButton(
                 onPressed: () {},
                 color: Color(0xffFFB64D),
@@ -106,7 +108,13 @@ class certificado extends StatelessWidget {
                 padding: EdgeInsets.only(top:68),
                 child: TextButton(
                 // Use TextButton for 'Saltar'
-                onPressed: () {},
+                onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Cuidador()),
+                            );
+                          },
                 child: Text(
                   "Saltar",
                   style: GoogleFonts.poppins(
@@ -121,7 +129,13 @@ class certificado extends StatelessWidget {
               Container(
                 width: double.infinity, // Ancho completo de la pantalla
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Cuidador()),
+                            );
+                          },
                   style: ElevatedButton.styleFrom(
                     minimumSize: const Size(0, 65),
                     backgroundColor: const Color(0xff4036EF),

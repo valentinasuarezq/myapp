@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './certificado.dart';
 
 class Paramayorseguri extends StatelessWidget {
 
@@ -46,7 +47,7 @@ fontWeight: FontWeight.w400,
 ),
 ),
 Padding(
-padding:EdgeInsets.fromLTRB(0, 70, 0, 0),
+padding:EdgeInsets.fromLTRB(0, 80, 0, 0),
 child:MaterialButton(
 onPressed:(){},
 color:Color(0xffFFB64D),
@@ -67,13 +68,19 @@ minWidth:260,
 ),
 Align(
 child:Container(
-margin: EdgeInsets.fromLTRB(0, 207, 0, 0),
+margin: EdgeInsets.fromLTRB(0, 221, 0, 0),
 width: MediaQuery.of(context).size.width,
 height:65,
 child:
 Align(
 child:MaterialButton(
-onPressed:(){},
+onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => certificado()),
+                            );
+                          },
 color:Color(0xff4036EF),
 padding:EdgeInsets.all(16),
 child:Text("Enviar", 

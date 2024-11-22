@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './cuidador.dart';
+import './cuidadores.dart';
 
 class datos extends StatelessWidget {
   String yellowcurva = "assets/images/yellowcurva.png";
@@ -7,6 +9,7 @@ class datos extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xffF2F2F2),
       body: Container(
         width: MediaQuery.of(context).size.width,
@@ -364,7 +367,13 @@ class datos extends StatelessWidget {
                     color: Color(0xffFFB64D), shape: BoxShape.circle),
                 child: IconButton(
                   icon: Icon(Icons.arrow_forward_ios),
-                  onPressed: () {},
+                  onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Cuidadores()),
+                            );
+                          },
                   color: Color(0xffffffff),
                   iconSize: 20,
                 ),

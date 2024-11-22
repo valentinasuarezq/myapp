@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './cuidador.dart';
+import './cuidadores.dart';
+import './perfil.dart';
 
 class chat extends StatelessWidget {
   @override
@@ -38,7 +41,7 @@ class chat extends StatelessWidget {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.asset("assets/images/veterinario.jpg",
+                      child: Image.asset("assets/images/valentina.jpg",
                           fit: BoxFit.cover),
                     ),
                     Column(
@@ -47,9 +50,9 @@ class chat extends StatelessWidget {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Padding(
-                          padding: EdgeInsets.fromLTRB(0, 0, 15, 0),
+                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
                           child: Text(
-                            "David",
+                            "Valentina",
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.clip,
                             style: GoogleFonts.poppins(
@@ -60,9 +63,9 @@ class chat extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                          padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                           child: Text(
-                            "Veterinario",
+                            "Cuidador",
                             textAlign: TextAlign.start,
                             overflow: TextOverflow.clip,
                             style: GoogleFonts.poppins(
@@ -75,7 +78,7 @@ class chat extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(90, 5, 0, 0),
+                      margin: EdgeInsets.fromLTRB(80, 5, 0, 0),
                       width: 40,
                       height: 40,
                       decoration: BoxDecoration(
@@ -223,7 +226,7 @@ class chat extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment(0.1, -0.1),
                                 child: Text(
-                                  "Seré el encargado de cuidar a tu mascota por estos 3 dias, cuentame que recomendaciones quieres que tenga en cuenta, para cuidar correctamente a cookie.",
+                                  "Seré la encargada de cuidar a tu mascota por estos 3 dias, cuentame que recomendaciones quieres que tenga en cuenta, para cuidar correctamente a cookie.",
                                   textAlign: TextAlign.start,
                                   overflow: TextOverflow.clip,
                                   style: GoogleFonts.poppins(
@@ -272,7 +275,7 @@ class chat extends StatelessWidget {
                                     bottomRight: Radius.circular(20.0)),
                               ),
                               child: Text(
-                                "Hola David.",
+                                "Hola Valentina.",
                                 textAlign: TextAlign.start,
                                 overflow: TextOverflow.clip,
                                 style: GoogleFonts.poppins(
@@ -535,7 +538,13 @@ class chat extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(85, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Cuidadores()),
+                            );
+                          },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -562,7 +571,13 @@ class chat extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => chat()),
+                            );
+                          },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -590,7 +605,13 @@ class chat extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => perfil()),
+                            );
+                          },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,0 +1,15 @@
+flutter_native_splash:
+  color: "#4036ee"
+  image: assets/images/pawsplash.png
+  branding: assets/images/transparentepaw.png
+  color_dark: "#4036ee"
+  image_dark: assets/images/pawsplash.png
+  branding_dark: assets/images/transparentepaw.png
+
+  android_12:
+    image: assets/images/pawsplash.png
+    icon_background_color: "#4036ee"
+    image_dark: assets/images/pawsplash.png
+    icon_background_color_dark: "#4036ee"
+
+  web: false

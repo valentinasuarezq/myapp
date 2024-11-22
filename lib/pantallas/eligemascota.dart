@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './datos.dart';
 
 class eligemascota extends StatelessWidget {
   eligemascota({super.key});
@@ -9,24 +10,14 @@ class eligemascota extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffF2F2F2),
-      body: 
-      Stack(
+      body: Stack(
         children: [
-          Container(
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:3252092794.
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-              image: AssetImage(yellowcurva),
+          Positioned.fill(
+            child: Image.asset(yellowcurva,
               fit: BoxFit.scaleDown,
               alignment: Alignment.bottomLeft,
-              )
-
-              ),
-
+            ),
           ),
-
           Align(
         alignment: Alignment.center,
         child: Container(
@@ -34,31 +25,24 @@ class eligemascota extends StatelessWidget {
           padding: const EdgeInsets.all(23),
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          decoration: BoxDecoration(
-            shape: BoxShape.rectangle,
-          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                margin: EdgeInsets.fromLTRB(0, 0, 100, 0),
+                margin: EdgeInsets.only(top: 15),
                 width: MediaQuery.of(context).size.width * 0.4,
                 height: 30,
-                child: Image(
+                child: const Image(
                   image: AssetImage("assets/images/elige.png"),
                 ),
               ),
               Expanded(
                 flex: 1,
-                child: Align(
-                  alignment: const Alignment(0.0, 0.0),
                   child: GridView(
-                    padding: const EdgeInsets.only(top: 10),
-                    shrinkWrap: false,
-                    scrollDirection: Axis.vertical,
-                    physics: const ScrollPhysics(),
+                    padding: const EdgeInsets.only(top: 20),
+                    shrinkWrap: true,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
@@ -71,7 +55,7 @@ class eligemascota extends StatelessWidget {
                         alignment: const Alignment(-0.1, 0.0),
                         child: Container(
                           margin: const EdgeInsets.fromLTRB(25, 0, 5, 0),
-                          width: 120,
+                          width:  MediaQuery.of(context).size.width * 0.35,
                           height: 200,
                           decoration: const BoxDecoration(
                             shape: BoxShape.rectangle,
@@ -105,8 +89,6 @@ class eligemascota extends StatelessWidget {
                                   child: Align(
                                     alignment: Alignment(-0.1, -0.0),
                                     child:
-
-                                        ///***If you have exported images you must have to copy those images in assets/images directory.
                                         Image(
                                       image:
                                           AssetImage("assets/images/dog.png"),
@@ -243,26 +225,19 @@ class eligemascota extends StatelessWidget {
                                     color: Color(0xff333333),
                                   ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    vertical: 0, horizontal: 17),
-                                child:
-
-                                    ///***If you have export
                                     Image(
                                   image: AssetImage("assets/images/ave.png"),
                                   height: 106,
                                   width: 140,
                                   fit: BoxFit.contain,
                                 ),
-                              ),
+
                             ],
                           ),
                         ),
                       ),
                     ],
                   ),
-                ),
               ),
                Align(
                   alignment: Alignment(-0.77, -0.2),
@@ -381,17 +356,23 @@ class eligemascota extends StatelessWidget {
               Align(
                 alignment: const Alignment(0.8, 0.1),
                 child: Container(
-                  margin: const EdgeInsets.fromLTRB(0, 30, 0, 2),
-                  width: 40,
-                  height: 40,
+                  margin: const EdgeInsets.only(top: 20),
+                  width: MediaQuery.of(context).size.width * 0.12,
+                  height: 45,
                   decoration: BoxDecoration(
                     color: const Color(0xffFFB64D),
                     shape: BoxShape.circle,
                   ),
                   child: IconButton(
                     icon: const Icon(Icons.arrow_forward_ios),
-                    onPressed: () {},
-                    color: const Color(0xffffffff),
+                    onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => datos()),
+                            );
+                          },
+                    color: Colors.white,
                     iconSize: 20,
                   ),
                 ),

@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './chat.dart';
+import './cuidador.dart';
+import './cuidadores.dart';
+import './informacion.dart';
 
 class perfil extends StatelessWidget {
   String fondoPaw = "assets/images/fondopaw.png";
@@ -89,9 +93,9 @@ class perfil extends StatelessWidget {
                                           .45,
                                       color: Color(0xffFFB64D)),
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(0, 2, 84, 0),
+                                    padding: EdgeInsets.fromLTRB(0, 2, 100, 0),
                                     child: Text(
-                                      "Cuidador",
+                                      "Dueño",
                                       textAlign: TextAlign.start,
                                       overflow: TextOverflow.clip,
                                       style: GoogleFonts.poppins(
@@ -114,21 +118,27 @@ class perfil extends StatelessWidget {
             ),
             Align(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(50, 30, 50, 0),
+                padding: EdgeInsets.fromLTRB(50, 50, 50, 0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisSize: MainAxisSize.max,
                   children: [
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Informacion()),
+                            );
+                          },
                       color: Color(0xffFFB64D),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15.0),
                       ),
-                      padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      padding: EdgeInsets.fromLTRB(45, 10, 45, 10),
                       child: Text(
-                        "Mostrarme como dueño de  mascota",
+                        "Mostrarme como cuidador",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.poppins(
                           fontSize: 15,
@@ -138,7 +148,7 @@ class perfil extends StatelessWidget {
                       textColor: Color(0xffffffff),
                     ),
                     Padding(
-                      padding: EdgeInsets.fromLTRB(0, 10, 0, 10),
+                      padding: EdgeInsets.fromLTRB(0, 40, 0, 10),
                     ),
                     InkWell(
                       onTap: () {},
@@ -190,7 +200,7 @@ class perfil extends StatelessWidget {
             InkWell(
                       onTap: () {},
                       child:Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
               width: MediaQuery.of(context).size.width * 0.75,
               height: 40,
               decoration: BoxDecoration(
@@ -234,52 +244,7 @@ class perfil extends StatelessWidget {
             InkWell(
                       onTap: () {},
                       child:Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
-              width: MediaQuery.of(context).size.width * 0.75,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Color(0x1ffff9f9),
-                shape: BoxShape.rectangle,
-                borderRadius: BorderRadius.circular(15.0),
-                border: Border.all(color: Color(0xff4036EF), width: 2),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-                    child: SizedBox(
-                      width: 20,
-                      height: 20,
-                      child: ImageIcon(
-                        AssetImage("assets/images/certifi.png"),
-                        color: Color(0xff4036EF),
-                        ),
-                        ),
-                        ),
-                  Padding(
-                    padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-                    child: Text(
-                      "Certificados",
-                      textAlign: TextAlign.start,
-                      overflow: TextOverflow.clip,
-                      style: GoogleFonts.poppins(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Color(0xff333333),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ),
-            InkWell(
-                      onTap: () {},
-                      child:Container(
-              margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 30, 0, 0),
               width: MediaQuery.of(context).size.width * 0.75,
               height: 40,
               decoration: BoxDecoration(
@@ -340,7 +305,13 @@ class perfil extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(85, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Cuidadores()),
+                            );
+                          },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -367,7 +338,13 @@ class perfil extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => chat()),
+                            );
+                          },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -395,7 +372,13 @@ class perfil extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => perfil()),
+                            );
+                          },
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

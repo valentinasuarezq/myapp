@@ -1,7 +1,10 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:myapp/modelos/mascotas.dart';
+import '../modelos/mascotas.dart';
+import './chat.dart';
+import './chatcuidador.dart';
+import './perfil.dart';
+import './perfilcuidador.dart';
 
 class Cuidador extends StatelessWidget {
   String curvas1 = "assets/images/curvas1.png";
@@ -10,15 +13,17 @@ class Cuidador extends StatelessWidget {
   // este listado lo usó como ejemplo
   List<Mascotas> mascotas = [
     Mascotas(
-        "assets/images/fotoperro.png", "Cookie", "Chihuahua", "2 años", "1"),
+        "assets/images/cookie.jpg", "Cookie", "Criollo", "2 años", "1"),
     Mascotas(
-        "assets/images/fotoperro.png", "Aligonte", "Pastor", "5 años", "2"),
-    Mascotas("assets/images/fotoperro.png", "Onix", "Siames", "1 años", "3"),
+        "assets/images/pastor.jpg", "Aligonte", "Pastor", "5 años", "2"),
+    Mascotas("assets/images/siames.jpeg", "Onix", "Siames", "1 años", "3"),
   ];
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
         backgroundColor: Color(0xfffeb64e),
         body: SingleChildScrollView(
           child: Container(
@@ -110,7 +115,7 @@ class Cuidador extends StatelessWidget {
                     children: [
                       for (int i = 0; i < mascotas.length; i++)
                         Container(
-                          padding: EdgeInsets.fromLTRB(50, 20, 50, 0),
+                          padding: EdgeInsets.fromLTRB(50, 15, 50, 0),
                           width: MediaQuery.of(context).size.width,
                           height: 270,
                           decoration: BoxDecoration(
@@ -174,7 +179,8 @@ class Cuidador extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Text(
+                                          Expanded(
+                                          child: Text(
                                             mascotas[i].nombre,
                                             textAlign: TextAlign.start,
                                             overflow: TextOverflow.clip,
@@ -184,8 +190,10 @@ class Cuidador extends StatelessWidget {
                                               color: Color(0xff4036EF),
                                             ),
                                           ),
+                                          ),
+                                          Spacer(),
                                           Container(
-                                            margin: EdgeInsets.fromLTRB(170, 0, 0, 0),
+                                            margin: EdgeInsets.fromLTRB(0, 0, 20, 0),
                                             width: 20,
                                             height: 20,
                                             decoration: BoxDecoration(
@@ -207,7 +215,8 @@ class Cuidador extends StatelessWidget {
                                             CrossAxisAlignment.center,
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Column(
+                                          Expanded(
+                                          child: Column(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
@@ -235,14 +244,16 @@ class Cuidador extends StatelessWidget {
                                               ),
                                             ],
                                           ),
+                                          ),
+                                          Spacer(),
                                           MaterialButton(
                                             onPressed: () {},
-                                            padding: EdgeInsets.fromLTRB(95, 15, 0, 0),
+                                            padding: EdgeInsets.fromLTRB(0, 15, 10, 0),
                                             child: Text(
                                               "Ver más",
                                               style: GoogleFonts.poppins(
                                                 fontWeight: FontWeight.w400,
-                                                fontSize: 10,
+                                                fontSize: 11,
                                                 color: Color(0xff808080),
                                               ),
                                             ),
@@ -257,7 +268,11 @@ class Cuidador extends StatelessWidget {
                               ],
                             ),
                           ),
-                        )
+                        ),
+                        Padding(
+                                padding: EdgeInsets.only(
+                                    bottom: MediaQuery.of(context).size.height *
+                                        0.09))
                     ],
                   ),
                 ],
@@ -280,7 +295,13 @@ class Cuidador extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(85, 0, 0, 0),
                 child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Cuidador()),
+                            );
+                          },
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -308,7 +329,13 @@ class Cuidador extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Chatcuidador()),
+                            );
+                          },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -337,7 +364,13 @@ class Cuidador extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.fromLTRB(60, 0, 0, 0),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Perfilcuidador()),
+                            );
+                          },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

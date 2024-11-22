@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './fotoid.dart';
 
 class Informacion extends StatelessWidget {
   String yellowcurva = "assets/images/yellowcurva.png";
@@ -25,7 +26,7 @@ class Informacion extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0, 60, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 70, 0, 0),
               width: 200,
               height: 50,
               child: Image(
@@ -36,7 +37,7 @@ class Informacion extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 50, 196, 0),
+              padding: EdgeInsets.fromLTRB(0, 60, 196, 0),
               child: Text(
                 "Nombre",
                 textAlign: TextAlign.start,
@@ -261,7 +262,7 @@ class Informacion extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(215, 50, 0, 0),
+              margin: EdgeInsets.fromLTRB(215, 65, 0, 0),
               width: 40,
               height: 40,
               decoration: BoxDecoration(
@@ -270,7 +271,13 @@ class Informacion extends StatelessWidget {
               ),
               child: IconButton(
                 icon: Icon(Icons.arrow_forward_ios),
-                onPressed: () {},
+                onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => fotoid()),
+                            );
+                          },
                 color: Color(0xffffffff),
                 iconSize: 20,
               ),

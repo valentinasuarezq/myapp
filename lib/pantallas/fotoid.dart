@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import './paramayorseguri.dart';
 
 class fotoid extends StatelessWidget {
   @override
@@ -15,7 +16,7 @@ class fotoid extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(0, 60, 0, 0),
+              margin: EdgeInsets.fromLTRB(0, 65, 0, 0),
               padding: EdgeInsets.zero,
               width: 220,
               height: 50,
@@ -42,7 +43,7 @@ class fotoid extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 50, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 60, 0, 0),
               child: MaterialButton(
                 onPressed: () {},
                 color: Color(0xffFFB64D),
@@ -63,7 +64,7 @@ class fotoid extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.fromLTRB(0, 30, 0, 0),
+              padding: EdgeInsets.fromLTRB(0, 39, 0, 0),
               child: MaterialButton(
                 onPressed: () {},
                 color: Color(0xffFFB64D),
@@ -142,7 +143,13 @@ class fotoid extends StatelessWidget {
                     minWidth: MediaQuery.of(context).size.width,
                   ),
                   MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Paramayorseguri()),
+                            );
+                          },
                     shape: Border(
                         top: BorderSide(
                           color: Color(0xffFFFFFF),
@@ -151,7 +158,7 @@ class fotoid extends StatelessWidget {
                       ),
                     padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     child: Text(
-                      "Cancelar",
+                      "Enviar",
                       style: GoogleFonts.poppins(
                     fontSize: 15,
                     fontWeight: FontWeight.bold,
